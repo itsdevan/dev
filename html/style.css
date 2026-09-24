@@ -1,0 +1,146 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0 0 0;
+}
+
+.name {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.role {
+    font-size: 1rem;
+}
+
+.place {
+    font-size: 1rem;
+}
+
+.contact {
+    display: flex;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.5rem 0 0 0 ;
+}
+
+.bar {
+    background: #000;
+    width: 0.1rem;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0 2rem 0;
+}
+
+.horizontal-line {
+    background-color: #000;
+    height: 0.1rem;
+    margin: 1rem 0;
+    width: 80%;
+    align-self: center;
+}
+
+.section {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 0.5rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 4rem;
+    row-gap: 1rem;
+}
+
+.experience-role {
+    font-size: 1.1rem;
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    margin: 0.3rem 0;
+    gap: 0.3rem;
+}
+
+.items span::before {
+    content: '- ';
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 1rem;
+}
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.year {
+    justify-self: flex-end;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+}
+
+.project-details span:nth-child(n+2)::before {
+    content: '- ';
+}
+
+.achievements-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.achievements-content span::before {
+    content: '- ';
+}

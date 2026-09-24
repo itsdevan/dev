@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Anand P</title>
+
+<style>
+  :root {
+    --ink: #1a1d1f;
+    --ink-soft: #4a4f54;
+    --line: #d8d3c8;
+    --paper: #fbfaf7;
+    --accent: #2f4538;
+    --accent-soft: #5c7263;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: #e9e6de;
+    color: var(--ink);
+    font-family: "Source Sans Pro", "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 40px auto;
+    background: var(--paper);
+    padding: 56px 64px 64px;
+    border: 1px solid var(--line);
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 18px;
+    margin-bottom: 26px;
+  }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.35rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin: 0 0 8px;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .contact-line {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .contact-line span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .contact-line span:not(:last-child)::after {
+    content: "|";
+    margin: 0 10px;
+    color: var(--ink-soft);
+  }
+
+  .contact-line a {
+    color: var(--ink-soft);
+    text-decoration: underline;
+  }
+
+  .contact-line a:hover,
+  .contact-line a:focus-visible {
+    color: var(--accent);
+  }
+
+  /* ---------- Sections ---------- */
+
+  section {
+    margin-bottom: 26px;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .summary {
+    margin: 0;
+    color: var(--ink);
+    max-width: 68ch;
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 32px;
+  }
+
+  .skill-group h3 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: none;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+
+  .skill-group p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  /* ---------- Education / Project ---------- */
+
+  .entry {
+    margin-bottom: 18px;
+  }
+
+  .entry:last-child {
+    margin-bottom: 0;
+  }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 2px 16px;
+  }
+
+  .entry-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .entry-meta {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .entry-sub {
+    font-size: 0.92rem;
+    color: var(--accent-soft);
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  .entry ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+
+  .entry ul li {
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  .entry-tech {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 3px 0 0;
+  }
+
+  /* ---------- Languages ---------- */
+
+  .lang-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.lang-list li {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+  /* ---------- Print ---------- */
+
+  @media print {
+    body {
+      background: #fff;
+    }
+
+    .page {
+      margin: 0;
+      border: none;
+      max-width: 100%;
+      padding: 20px 32px;
+    }
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 640px) {
+    .page {
+      padding: 32px 22px;
+      margin: 0;
+      border: none;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .entry-head {
+      flex-direction: column;
+    }
+
+    .entry-meta {
+      white-space: normal;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <h1>DEV ANAND P</h1>
+
+    <p class="contact-line">
+      <span>+91 9895410937</span>
+      <span>
+        <a href="mailto:itsdevanandp@gmail.com">
+          itsdevanandp@gmail.com
+        </a>
+      </span>
+      <span>
+        <a href="https://linkedin.com/in/itsdevanandp"
+           target="_blank"
+           rel="noopener">
+          Linkedin
+        </a>
+      </span>
+      <span>
+        <a href="https://github.com/itsdevan"
+           target="_blank"
+           rel="noopener">
+          Github
+        </a>
+      </span>
+    </p>
+  </header>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section aria-labelledby="about-h">
+    <h2 id="about-h">Professional Summary</h2>
+
+    <p class="summary">
+      Computer Science graduate currently pursuing a Master of Computer
+      Applications, with a strong interest in software development and
+      emerging technologies. Skilled in programming and web technologies,
+      with a focus on building practical solutions and continuously
+      improving technical ability. Passionate about learning new
+      technologies, solving problems, and developing reliable,
+      user-focused applications.
+    </p>
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+
+  <section aria-labelledby="skills-h">
+    <h2 id="skills-h">Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h3>Programming Languages</h3>
+        <p>Python, Java, JavaScript</p>
+      </div>
+
+      <div class="skill-group">
+        <h3>Web Technologies</h3>
+        <p>HTML, CSS, JavaScript</p>
+      </div>
+
+      <div class="skill-group">
+        <h3>Tools &amp; Software</h3>
+        <p>Microsoft Excel, Microsoft Word, Microsoft PowerPoint, VS Code</p>
+      </div>
+
+      <div class="skill-group">
+        <h3>Soft Skills</h3>
+        <p>Problem Solving, Adaptability, Time Management, Self-Learning</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= EDUCATION ================= -->
+
+  <section aria-labelledby="edu-h">
+    <h2 id="edu-h">Education</h2>
+
+    <div class="entry">
+
+      <div class="entry-head">
+        <span class="entry-title">
+          Master of Computer Applications
+        </span>
+
+        <span class="entry-meta">
+          2026 – Present
+        </span>
+      </div>
+
+      <div class="entry-sub">
+        College of Engineering, Trivandrum (CET)
+      </div>
+
+      <p class="entry-tech">
+        Affiliated to APJ Abdul Kalam Technological University
+      </p>
+
+    </div>
+
+
+    <div class="entry">
+
+      <div class="entry-head">
+        <span class="entry-title">
+          Bachelor of Computer Science
+        </span>
+
+        <span class="entry-meta">
+          2023 – 2026
+        </span>
+      </div>
+
+      <div class="entry-sub">
+        St. Joseph's College (Autonomous), Devagiri
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROJECT ================= -->
+
+  <section aria-labelledby="proj-h">
+    <h2 id="proj-h">Project</h2>
+
+    <div class="entry">
+
+      <div class="entry-head">
+        <span class="entry-title">
+          Thanal — Employment &amp; Safety Platform
+        </span>
+      </div>
+
+      <p class="entry-tech">
+        Flutter, Python, Django, MySQL, HTML, CSS, JavaScript
+      </p>
+
+      <p class="summary">
+        A secure employment and safety platform connecting verified
+        migrant workers with verified employers.
+      </p>
+
+      <ul>
+        <li>
+          Implemented worker and employer functionality including
+          registration, profile management, job posting, job search,
+          applications, verification, complaints, ratings, and feedback.
+        </li>
+
+        <li>
+          Designed an integrated SOS system allowing workers and employers
+          to send emergency alerts with location information to the Admin
+          portal.
+        </li>
+
+        <li>
+          Developed an Admin control system for user verification,
+          job management, complaint handling, and emergency monitoring.
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ================= LANGUAGES ================= -->
+
+  <section aria-labelledby="lang-h">
+    <h2 id="lang-h">Languages</h2>
+
+    <ul class="lang-list">
+  <li>English</li>
+  <li>Malayalam</li>
+  <li>Hindi</li>
+</ul>
+  </section>
+
+</div>
+
+</body>
+</html>
