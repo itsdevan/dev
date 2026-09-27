@@ -1,56 +1,105 @@
+/*Queue using array*/
 #include<stdio.h>
-#include<stdlib.h>
-typedef struct node{
-    int data;
-    struct node *next;
-}node;
-node *front=NULL;
-node *rear=NULL;
+#define max 5
 
-node *createnode(){
-    int value;
-    printf("enter value:");
-    scanf("%d",&value);
-    node *newnode=(node*)malloc(sizeof(node));
-    newnode->data=value;
-    newnode->next=NULL;
-    return newnode;
+int queue[max];
+int front=-1,rear=-1;
+int value;
 
-}
 void enqueue(){
-    node *newnode=createnode();
-    if(rear==NULL){
-        front = rear=newnode;
+    if(queue[max-1]){
+        printf("Queue is full");
     }
-    rear->next=newnode;
-    rear=newnode;
+
+    else{
+        printf("Enter the element to be inserted: ");
+        scanf("%d",&value);
+        rear++;
+        queue[rear]=value;
+
+        if(front==-1){
+            front=0;
+        }
+
+    }
 }
+
 void dequeue(){
-    node *temp;
-    if(front==NULL){
-    printf("queue is empty!");
-    }else{
-        printf("%d is removed ",front->data);
-        temp=front;
-        front=front->next;
-        free(temp);
-        if(front==NULL){
-            rear=NULL;
+    if(front==-1 || rear<front){
+        printf("Query is empty");
+    }
+    else{
+        printf("%d is deleted from query",queue[front]);
+        front++;
+
+        if(front>rear){
+            front=-1;
+            rear=-1;
         }
     }
-    
 }
-void main(){
-    int choice;
-    while(1){
-        printf("enter choice:");
-        scanf("%d",&choice);
-        switch(choice){
-            case 1:enqueue();
-                    break;
-            case 2:dequeue();
-                    break;
+
+void peek(){
+    if(front==-1 || front>rear){
+        printf("Queue is empty");
+    }
+    else{
+        printf("The front element is:%d",queue[front]);
+    }
+}
+
+void display(){
+    if(front==-1 || front>rear){
+        printf("Queue is empty");
+    }
+    else{
+
+        printf("The element are: ");
+
+        for(int i=front;i<=rear;i++){
+        printf("%d",queue[i]);
         }
+    }
+}
+
+
+
+int main(){
+    int ch;
+    while(1){
+        printf("\n1.Enqueue\n2.Dequeue\n3.Peek\n4.Display\n5.exit\n");
+        printf("Enter your choice: ");
+        scanf("%d",&ch);
+
+        switch(ch){
+
+        case 1:
+        enqueue();
+        break;
+
+        case 2:
+        dequeue();
+        break;
+
+        case 3:
+        peek();
+        break;
+
+        case 4:
+        display();
+        break;
+
+        case 5:
+        return 0;
+
+        default:
+        printf("Invalid");
+
+
+        }
+
+        
+
 
     }
 }
